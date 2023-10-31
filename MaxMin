@@ -1,29 +1,9 @@
 import java.util.Scanner;
 
 class Hello{
-   
-    static int Max(int[] A){
-            int M= A[0];
-            for (int i= 0; i < A.length; i++) {
-                if(A[0]<A[i]){
-                    M=A[i];
-                }
-            }
-            return M;
-        }
-    static int Min(int[] A){
-            int Mi= A[0];
-            for (int i= 0; i < A.length; i++) {
-                if(A[0]>A[i]){
-                    Mi=A[i];
-                }
-            }
-            return Mi;
-        }
 
-    public static void main (String args[]){
-       
-       Scanner sc=new Scanner(System.in);  
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);  
        System.out.print("Enter the size of array ");  
        int n = sc.nextInt();  
        int[] Arr = new int[n];  
@@ -31,10 +11,22 @@ class Hello{
        for(int i=0; i<n; i++)  
        {  
         Arr[i]= sc.nextInt();  
-    } 
-       int Maximun= Max(Arr);
-       System.out.println("Maximun "+Maximun);
-       int Minimun= Min(Arr);
-       System.out.println("Minimun "+Minimun);
+        } 
+
+        int max = Arr[0];   
+        int min = Arr[0];  
+
+        for (int i = 1; i < Arr.length; i++) {
+            if (Arr[i] > max) {
+                max = Arr[i]; // 
+            }
+
+            if (Arr[i] < min) {
+                min = Arr[i]; 
+            }
+        }
+
+        System.out.println("Maximum value: " + max);
+        System.out.println("Minimum value: " + min);
     }
 }
